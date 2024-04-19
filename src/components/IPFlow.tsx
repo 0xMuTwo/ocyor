@@ -1,11 +1,11 @@
 import { CardWithContent } from "./CardWithContent";
 const cardContent = {
-  title: "You are a builder on Royco",
-  subheading: "Version—0",
+  title: "You are a builder",
+  subheading: "",
   descriptions: [
-    "Demo Implementation of “Royco: The Liquidity Coordination Protocol”",
-    "Jai Bhavnani & James Folkestad",
-    "March 31, 2024",
+    "You have a product.",
+    "You don't have a ton of capital.",
+    "Create a market, then provide incentives for users to seed liquidity",
   ],
 };
 
