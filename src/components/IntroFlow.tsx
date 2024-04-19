@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { IntroWithContent } from "../IntroWithContent";
+import { CardWithContent } from "./CardWithContent";
+import { AppState } from "./types";
 const cardContents = [
   {
     title: "Welcome to Royco",
@@ -23,20 +24,25 @@ const cardContents = [
     ],
   },
 ];
-const IntroFlow = () => {
+
+type IntroFlowProps = {
+  changeState: (newState: AppState) => void;
+};
+
+const IntroFlow = ({ changeState }: IntroFlowProps) => {
   const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
   const handleContinue = () => {
     setCurrentCardIndex((prevIndex) => prevIndex + 1);
   };
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <IntroWithContent
+      <CardWithContent
         title={cardContents[currentCardIndex].title}
         subheading={cardContents[currentCardIndex].subheading}
         description={cardContents[currentCardIndex].descriptions}
         onNext={handleContinue}
         isLastCard={currentCardIndex === cardContents.length - 1}
-        handleLastCard={() => console.log("Last Card")}
+        handleLastCard={() => changeState("IP")}
       />
     </div>
   );

@@ -8,23 +8,28 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-interface IntroWithContentProps {
+interface CardWithContentProps {
   title: string;
   subheading: string;
   description: string[];
-  isLastCard: boolean;
   onNext: () => void;
-  handleLastCard: () => void;
+  isLastCard?: boolean; //Assumes TRUE if no val passed
+  handleLastCard?: () => void; //If no function, runs onNext.
+  buttonText?: string;
 }
 
-export function IntroWithContent({
+export function CardWithContent({
   title,
   description,
   subheading,
-  isLastCard,
+  isLastCard = true,
   onNext,
   handleLastCard,
-}: IntroWithContentProps) {
+  buttonText,
+}: CardWithContentProps) {
+  // Determine which handler to use. If isLastCard is true and handleLastCard is provided,
+  // use handleLastCard; otherwise, use onNext.
+  const clickHandler = isLastCard && handleLastCard ? handleLastCard : onNext;
   return (
     <Card className="w-[450px]">
       <CardHeader>
@@ -43,11 +48,8 @@ export function IntroWithContent({
         ))}
       </CardContent>
       <CardFooter className="flex justify-center">
-        <Button
-          className="px-28"
-          onClick={isLastCard ? handleLastCard : onNext}
-        >
-          Continue
+        <Button className="px-28" onClick={clickHandler}>
+          {buttonText || "Continue"}
         </Button>
       </CardFooter>
     </Card>
