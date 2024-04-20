@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react";
 import { CardWithContent } from "./CardWithContent";
+import { IPState } from "./types";
+import { useRouter } from "next/navigation";
 const cardContent = {
   title: "You are a builder",
   subheading: "",
@@ -10,15 +13,27 @@ const cardContent = {
 };
 
 const IPFlow = () => {
+  const [ipFlowState, setIpFlowState] = useState<IPState>("Card");
+  const router = useRouter();
+  useEffect(() => {
+    if (ipFlowState === "Market") {
+      router.push("/market");
+    }
+  }, [ipFlowState, router]);
+
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <CardWithContent
-        title={cardContent.title}
-        subheading={cardContent.subheading}
-        description={cardContent.descriptions}
-        onNext={() => console.log("button clicked")}
-      />
-    </div>
+    <>
+      {ipFlowState === "Card" ? (
+        <div className="flex justify-center items-center min-h-screen">
+          <CardWithContent
+            title={cardContent.title}
+            subheading={cardContent.subheading}
+            description={cardContent.descriptions}
+            onNext={() => setIpFlowState("Market")}
+          />
+        </div>
+      ) : null}
+    </>
   );
 };
 export default IPFlow;
