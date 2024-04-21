@@ -12,5 +12,6 @@ TODO List
 - [ ] Create LP Flow 2
 
 - [] QoL Fixes
-  - Fix Flashbanging on IP 1-6
+  - Fix flashing on IP 1-6
     - Just add a black BG between it and actual BG. Should fix quickly, then can remove wait limit as well
+    - Get rid of "x" on Market Dialogs

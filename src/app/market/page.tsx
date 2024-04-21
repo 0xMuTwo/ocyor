@@ -1,7 +1,9 @@
+"use client";
 import MarketDialogManager from "@/components/ManageMarket/MarketDialogManager";
+import { useMarketStore } from "@/stores/useMarketStore";
 
-let markets = [];
 const Market = () => {
+  const markets = useMarketStore((state) => state.markets); // Access markets from the store
   const noMarkets = markets.length === 0;
 
   return (
@@ -16,9 +18,16 @@ const Market = () => {
           </div>
         </>
       ) : (
-        <div>Markets Found</div>
+        <div className="flex flex-col items-center justify-center w-full">
+          {markets.map((market, index) => (
+            <div key={index} className="text-xl">
+              {market.poolName} - {market.baseAsset}
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
 };
+
 export default Market;

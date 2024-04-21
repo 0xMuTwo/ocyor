@@ -12,13 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
+import { Select, SelectTrigger, SelectValue } from "../ui/select";
 import { Switch } from "../ui/switch";
 
 interface createFirstAskProps {
