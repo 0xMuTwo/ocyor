@@ -5,7 +5,7 @@ TODO List
 - [x] Implement Intro Flow
 - [ ] Create IP Flow 1
   - [x] IP FLOW 1.1 - 1.6
-  - [ ] Implement Zustand
+  - [x] Implement Zustand
   - [ ] IP Flow 1.7
 - [ ] Create Password Login
 - [ ] Create LP Flow 1
