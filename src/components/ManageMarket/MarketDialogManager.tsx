@@ -50,8 +50,8 @@ const MarketDialogManager = () => {
 
   //STATES
   const [poolName, setPoolName] = useState("Proj Liquidity Round 1");
-  const [baseAsset, setBaseAsset] = useState("");
-  const [actionType, setActionType] = useState("");
+  const [baseAsset, setBaseAsset] = useState("ETH");
+  const [actionType, setActionType] = useState("Lockup");
   const [referralAmount, setReferralAmount] = useState<number>(10);
   const [isWhitelisted, setIsWhitelisted] = useState(false);
 
