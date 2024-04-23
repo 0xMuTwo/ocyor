@@ -18,6 +18,7 @@ interface createFirstAskProps {
   isOpen: boolean;
   baseAsset: string;
   setBaseAssetAmt: (amount: number) => void;
+  setIncentiveAmt: (amount: number) => void;
   setIncentive: (incentive: string) => void;
 }
 
@@ -27,6 +28,7 @@ export function CreateFirstAsk({
   onClose,
   setBaseAssetAmt,
   setIncentive,
+  setIncentiveAmt,
 }: createFirstAskProps) {
   return (
     <Dialog open={isOpen}>
@@ -72,7 +74,7 @@ export function CreateFirstAsk({
               type="number"
               defaultValue="10"
               className="col-span-3"
-              onChange={(e) => setBaseAssetAmt(+e.target.value)}
+              onChange={(e) => setIncentiveAmt(+e.target.value)}
             />
           </div>
         </div>

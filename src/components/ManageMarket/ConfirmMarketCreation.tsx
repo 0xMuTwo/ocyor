@@ -62,7 +62,7 @@ const ConfirmMarketCreation = ({
               disabled
             />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4  ">
+          <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="baseAsset">Base Asset</Label>
             <Select disabled>
               <SelectTrigger id="baseAsset" className="col-span-3" disabled>

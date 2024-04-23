@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CreateFirstAsk } from "./CreateFirstAsk";
 import ConfirmMarketCreation from "./ConfirmMarketCreation";
 import { useMarketStore } from "@/stores/useMarketStore";
-import { Market } from "../types";
+import { AskOrder, Market, Order } from "../types";
 
 const MarketDialogManager = () => {
   const { markets, addMarket } = useMarketStore();
@@ -36,13 +36,21 @@ const MarketDialogManager = () => {
   const handleThirdDialogClose = () => {
     setIsThirdDialogOpen(false);
     // Constructing the new market to add, based on the gathered information
+    const firstOrder: AskOrder = {
+      creatorAddress: "FirstUser",
+      isInitialAsk: true,
+      orderType: "Ask",
+      baseAmount: baseAssetAmt,
+      incentive: incentive,
+      incentiveAmount: incentiveAmt,
+    };
     const userMarket: Market = {
       poolName: poolName,
       baseAsset: baseAsset,
       actionType: actionType,
       referralAmount: referralAmount,
       isWhitelisted: isWhitelisted,
-      orderbook: [], // or you might leave it undefined or not include it at all if that suits your logic
+      orderbook: [firstOrder],
     };
     addMarket(userMarket);
     console.log("Market created:", userMarket);
@@ -55,8 +63,9 @@ const MarketDialogManager = () => {
   const [referralAmount, setReferralAmount] = useState<number>(10);
   const [isWhitelisted, setIsWhitelisted] = useState(false);
 
-  const [baseAssetAmt, setBaseAssetAmt] = useState<number>(0);
+  const [baseAssetAmt, setBaseAssetAmt] = useState<number>(10);
   const [incentive, setIncentive] = useState<string>("Blast Gold");
+  const [incentiveAmt, setIncentiveAmt] = useState<number>(10);
 
   return (
     <div>
@@ -82,6 +91,7 @@ const MarketDialogManager = () => {
           onClose={handleSecondDialogClose}
           setBaseAssetAmt={setBaseAssetAmt}
           setIncentive={setIncentive}
+          setIncentiveAmt={setIncentiveAmt}
         />
       )}
       {isThirdDialogOpen && (

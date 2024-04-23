@@ -6,5 +6,22 @@ export type Market = {
   actionType: string;
   referralAmount: number;
   isWhitelisted: boolean;
-  orderbook?: [];
+  orderbook: Order[];
 };
+
+export type AskOrder = {
+  orderType: "Ask";
+  creatorAddress: string;
+  isInitialAsk: boolean;
+  baseAmount: number;
+  incentive: string;
+  incentiveAmount: number;
+};
+
+export type BidOrder = {
+  orderType: "Bid";
+  creatorAddress: string;
+  baseAmount: number;
+};
+
+export type Order = AskOrder | BidOrder;
