@@ -1,5 +1,6 @@
 export type AppState = "Intro" | "IP" | "LP1" | "LP2";
 export type IPState = "Card" | "Market";
+export type LP1State = "Card" | "Market";
 export type Market = {
   poolName: string;
   baseAsset: string;
@@ -25,3 +26,9 @@ export type BidOrder = {
 };
 
 export type Order = AskOrder | BidOrder;
+
+export enum BgColor {
+  IP = "bg-indigo-300",
+  LP1 = "bg-rose-300",
+  LP2 = "bg-sky-300",
+}

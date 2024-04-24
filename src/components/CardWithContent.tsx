@@ -16,6 +16,7 @@ interface CardWithContentProps {
   isLastCard?: boolean; //Assumes TRUE if no val passed
   handleLastCard?: () => void; //If no function, runs onNext.
   buttonText?: string;
+  bgColor?: string;
 }
 
 export function CardWithContent({
@@ -26,15 +27,13 @@ export function CardWithContent({
   onNext,
   handleLastCard,
   buttonText,
+  bgColor,
 }: CardWithContentProps) {
   // Determine which handler to use. If isLastCard is true and handleLastCard is provided,
   // use handleLastCard; otherwise, use onNext.
   const clickHandler = isLastCard && handleLastCard ? handleLastCard : onNext;
-  // bg-indigo-300
-  // bg-rose-300
-  // bg-sky-300
   return (
-    <Card className="w-[450px] bg-sky-300">
+    <Card className={`w-[450px] ${bgColor}`}>
       <CardHeader>
         <CardTitle className="flex justify-center text-4xl text-center">
           {title}

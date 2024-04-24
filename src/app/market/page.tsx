@@ -1,14 +1,37 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import MarketDialogManager from "@/components/ManageMarket/MarketDialogManager";
 import PoolCard from "@/components/PoolCard";
 import { useMarketStore } from "@/stores/useMarketStore";
+import { useAppStateStore } from "@/stores/useAppStateStore";
+import { useRouter } from "next/navigation";
+import { BgColor } from "@/components/types";
 
-const Market = () => {
+const Page = () => {
   const markets = useMarketStore((state) => state.markets);
+  const setAppState = useAppStateStore((state) => state.setAppState);
+  const appState = useAppStateStore((state) => state.appState);
   const noMarkets = markets.length === 0;
+  const router = useRouter();
+
+  let bgColor: BgColor = BgColor.IP;
+  if (appState === "LP1") {
+    bgColor = BgColor.LP1;
+  }
+  if (appState === "LP2") {
+    bgColor = BgColor.LP2;
+  }
+
+  const handleBecomeLP = () => {
+    console.log("Handling Become LP");
+    setAppState("LP1");
+    router.push("/");
+  };
 
   return (
-    <div className="flex bg-sky-300 h-[calc(100vh-5rem)]  w-[calc(100vw-5rem)] m-auto rounded-xl flex-col justify-between">
+    <div
+      className={`flex ${bgColor} h-[calc(100vh-5rem)]  w-[calc(100vw-5rem)] m-auto rounded-xl flex-col justify-between`}
+    >
       {noMarkets ? (
         <>
           <div className="flex flex-1 items-center justify-center w-full text-3xl">
@@ -36,16 +59,18 @@ const Market = () => {
                   key={index}
                   initialAsk={initialAskOrder.baseAmount} // Assuming PoolCard expects this
                 />
-              ) : null; // or handle markets without an initial ask order differently
+              ) : null;
             })}
           </div>
-          <div className="flex justify-center pb-8 w-full">
-            <MarketDialogManager />
-          </div>
+          {appState === "IP" ? (
+            <div className="flex justify-center pb-8 w-full">
+              <Button onClick={handleBecomeLP}>Become LP</Button>
+            </div>
+          ) : null}
         </>
       )}
     </div>
   );
 };
 
-export default Market;
+export default Page;

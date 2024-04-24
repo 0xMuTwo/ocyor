@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { CardWithContent } from "./CardWithContent";
-import { AppState } from "./types";
+import { AppState, BgColor } from "./types";
 const cardContents = [
   {
     title: "Welcome to Royco",
@@ -14,13 +14,14 @@ const cardContents = [
   },
   {
     title: "How this works:",
-    subheading: "You'll interact as 3 users.",
+    subheading: "You'll interact as 3 users.", //TODO Make this more bold, blow it up. It's the most important. Giving this information is important.
     descriptions: [
       "First, a Builder (Incentive Provider)",
       "Second, a Liquidity Provider.",
       "Third, as Pool Token buyer.",
       "*This is a DEMO, running locally in your browser. ",
       "There is no server, no smart contracts are called. You cannot mess this up.",
+      "If you want to start over, just click refresh.",
     ],
   },
 ];
@@ -43,6 +44,7 @@ const IntroFlow = ({ changeState }: IntroFlowProps) => {
         onNext={handleContinue}
         isLastCard={currentCardIndex === cardContents.length - 1}
         handleLastCard={() => changeState("IP")}
+        bgColor={BgColor.IP}
       />
     </div>
   );

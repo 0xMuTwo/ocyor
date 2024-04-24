@@ -1,40 +1,39 @@
 import { useEffect, useState } from "react";
 import { CardWithContent } from "./CardWithContent";
-import { BgColor, IPState } from "./types";
+import { BgColor, IPState, LP1State } from "./types";
 import { useRouter } from "next/navigation";
 const cardContent = {
-  title: "You are a builder",
+  title: "You are an LP",
   subheading: "",
   descriptions: [
-    "You have a product.",
-    "You don't have a ton of capital.",
-    "Create a market, then provide incentives for users to seed liquidity",
+    "You have extra capital...",
+    "You're willing to provide it,",
+    "for the right price.",
   ],
 };
-
-const IPFlow = () => {
-  const [ipFlowState, setIpFlowState] = useState<IPState>("Card");
+const LP1Flow = () => {
+  const [LP1FlowState, setLP1FlowState] = useState<LP1State>("Card");
   const router = useRouter();
   useEffect(() => {
-    if (ipFlowState === "Market") {
+    if (LP1FlowState === "Market") {
       router.push("/market");
     }
-  }, [ipFlowState, router]);
+  }, [LP1FlowState, router]);
 
   return (
     <>
-      {ipFlowState === "Card" ? (
+      {LP1FlowState === "Card" ? (
         <div className="flex justify-center items-center min-h-screen">
           <CardWithContent
             title={cardContent.title}
             subheading={cardContent.subheading}
             description={cardContent.descriptions}
-            onNext={() => setIpFlowState("Market")}
-            bgColor={BgColor.IP}
+            onNext={() => setLP1FlowState("Market")}
+            bgColor={BgColor.LP1}
           />
         </div>
       ) : null}
     </>
   );
 };
-export default IPFlow;
+export default LP1Flow;
