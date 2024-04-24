@@ -24,9 +24,8 @@ const Page = () => {
   }
 
   const handleBecomeLP = () => {
-    console.log("Handling Become LP");
-    setAppState("LP1");
     router.push("/");
+    setAppState("LP1");
   };
   const handleRouterPush = (name: string) => {
     router.push(`/market/${nameToSlug(name)}`);
