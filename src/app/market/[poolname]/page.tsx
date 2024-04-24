@@ -1,5 +1,7 @@
 "use client";
+import MarketDashboard from "@/components/MarketDashboard/MarketDashboard";
 import { useMarketStore } from "@/stores/useMarketStore";
+import { Market } from "@/components/types";
 import { slugToName } from "@/lib/utils";
 
 interface PageProps {
@@ -7,12 +9,20 @@ interface PageProps {
 }
 const Page = ({ params }: PageProps) => {
   const markets = useMarketStore((state) => state.markets);
-  const market = markets.find(
+  const market: Market | undefined = markets.find(
     (market) => market.poolName === slugToName(params.poolname),
   );
 
   return (
-    <>{market ? <div>{market.poolName}</div> : <div>Market not found</div>}</>
+    <>
+      {market ? (
+        <div>
+          <MarketDashboard market={market} />
+        </div>
+      ) : (
+        <div>Market not found</div>
+      )}
+    </>
   );
 };
 export default Page;

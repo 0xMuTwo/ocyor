@@ -3,6 +3,7 @@ export type IPState = "Card" | "Market";
 export type LP1State = "Card" | "Market";
 export type Market = {
   poolName: string;
+  creatorAddress: string;
   baseAsset: string;
   actionType: string;
   referralAmount: number;

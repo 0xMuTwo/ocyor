@@ -12,6 +12,9 @@ const Page = () => {
   const markets = useMarketStore((state) => state.markets);
   const setAppState = useAppStateStore((state) => state.setAppState);
   const appState = useAppStateStore((state) => state.appState);
+  const setCurrentPool = useMarketStore(
+    (state) => state.setCurrentMarketPoolName,
+  );
   const noMarkets = markets.length === 0;
   const router = useRouter();
 
@@ -29,6 +32,7 @@ const Page = () => {
   };
   const handleRouterPush = (name: string) => {
     router.push(`/market/${nameToSlug(name)}`);
+    setCurrentPool(name);
   };
 
   return (

@@ -47,6 +47,7 @@ const MarketDialogManager = () => {
     };
     const userMarket: Market = {
       poolName: slugToName(poolName),
+      creatorAddress: "Builder",
       baseAsset: baseAsset,
       actionType: actionType,
       referralAmount: referralAmount,
