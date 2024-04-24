@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { nameToSlug } from "@/lib/utils";
 import MarketDialogManager from "@/components/ManageMarket/MarketDialogManager";
 import PoolCard from "@/components/PoolCard";
 import { useMarketStore } from "@/stores/useMarketStore";
@@ -26,6 +27,9 @@ const Page = () => {
     console.log("Handling Become LP");
     setAppState("LP1");
     router.push("/");
+  };
+  const handleRouterPush = (name: string) => {
+    router.push(`/market/${nameToSlug(name)}`);
   };
 
   return (
@@ -57,8 +61,8 @@ const Page = () => {
                   actionType={market.actionType}
                   isWhitelisted={market.isWhitelisted}
                   key={index}
-                  initialAsk={initialAskOrder.baseAmount} // Assuming PoolCard expects this
-                  onClick={() => router.push(`/market/${market.poolName}`)}
+                  initialAsk={initialAskOrder.baseAmount}
+                  onClick={() => handleRouterPush(market.poolName)}
                 />
               ) : null;
             })}

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { slugToName } from "@/lib/utils";
 import { CreateMarketPopup } from "./CreateMarket";
 import { Button } from "@/components/ui/button";
 import { CreateFirstAsk } from "./CreateFirstAsk";
@@ -45,7 +46,7 @@ const MarketDialogManager = () => {
       incentiveAmount: incentiveAmt,
     };
     const userMarket: Market = {
-      poolName: poolName,
+      poolName: slugToName(poolName),
       baseAsset: baseAsset,
       actionType: actionType,
       referralAmount: referralAmount,
