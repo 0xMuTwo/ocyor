@@ -58,6 +58,7 @@ const Page = () => {
                   isWhitelisted={market.isWhitelisted}
                   key={index}
                   initialAsk={initialAskOrder.baseAmount} // Assuming PoolCard expects this
+                  onClick={() => router.push(`/market/${market.poolName}`)}
                 />
               ) : null;
             })}
