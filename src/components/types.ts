@@ -24,6 +24,8 @@ export type BidOrder = {
   orderType: "Bid";
   creatorAddress: string;
   baseAmount: number;
+  incentive: string;
+  incentiveAmount: number;
 };
 
 export type Order = AskOrder | BidOrder;
