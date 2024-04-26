@@ -8,8 +8,10 @@ TODO List
   - [x] Implement Zustand
   - [x] IP Flow 1.7
 - [ ] Create LP Flow 1
-- [ ] Create Password Login
+  - [] Wire up Fill and Place buttons.
+  - [] Calculate Amount filled and put in progress bar
 - [ ] Create LP Flow 2
+- [ ] Create Password Login
 
 - [ ] QoL Fixes
   - [ ] Fix flashing on IP 1-6
