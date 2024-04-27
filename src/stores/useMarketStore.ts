@@ -12,6 +12,7 @@ interface MarketActions {
   addMarket: (newMarket: Market) => void;
   setMarkets: (markets: Market[]) => void;
   setCurrentMarketPoolName: (poolName: string) => void;
+  updateMarketAmountFilled: (poolName: string, amount: number) => void;
 }
 
 interface MarketSelectors {
@@ -37,6 +38,15 @@ export const useMarketStore = create<MarketStore>(
           (market) => currentState.currentMarketPoolName === market.poolName,
         );
       },
+      updateMarketAmountFilled: (poolName: string, amount: number) =>
+        set((state: MarketState) => ({
+          markets: state.markets.map((market) => {
+            if (market.poolName === poolName) {
+              return { ...market, amountFilled: market.amountFilled + amount };
+            }
+            return market;
+          }),
+        })),
     }),
     { name: "MarketStore" },
   ) as any,

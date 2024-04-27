@@ -9,6 +9,7 @@ export type Market = {
   referralAmount: number;
   isWhitelisted: boolean;
   orderbook: Order[];
+  amountFilled: number;
 };
 
 export type AskOrder = {
@@ -35,3 +36,9 @@ export enum BgColor {
   LP1 = "bg-rose-300",
   LP2 = "bg-sky-300",
 }
+
+export type User = {
+  username: string;
+  poolTokens: number;
+  incentives: number;
+};

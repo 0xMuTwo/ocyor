@@ -53,6 +53,7 @@ const MarketDialogManager = () => {
       referralAmount: referralAmount,
       isWhitelisted: isWhitelisted,
       orderbook: [firstOrder],
+      amountFilled: 0,
     };
     addMarket(userMarket);
     console.log("Market created:", userMarket);

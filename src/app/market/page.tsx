@@ -1,11 +1,11 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import { nameToSlug } from "@/lib/utils";
-import MarketDialogManager from "@/components/ManageMarket/MarketDialogManager";
-import PoolCard from "@/components/PoolCard";
 import { useMarketStore } from "@/stores/useMarketStore";
 import { useAppStateStore } from "@/stores/useAppStateStore";
-import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import MarketDialogManager from "@/components/ManageMarket/MarketDialogManager";
+import PoolCard from "@/components/PoolCard";
 import { BgColor } from "@/components/types";
 
 const Page = () => {
@@ -70,7 +70,7 @@ const Page = () => {
               ) : null;
             })}
           </div>
-          {appState === "IP" ? (
+          {appState === "IP" || appState === "Intro" ? (
             <div className="flex justify-center pb-8 w-full">
               <Button onClick={handleBecomeLP}>Become LP</Button>
             </div>

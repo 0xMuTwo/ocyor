@@ -1,6 +1,8 @@
 import { Market } from "../types";
 import OrderCard from "./OrderCard";
 import CreateOrderCard from "./CreateOrderCard";
+import { Toaster } from "../ui/sonner";
+import { useState } from "react";
 
 const AskBidView = ({ market }: { market: Market }) => {
   const initialAskOrder = market.orderbook.find(
@@ -10,10 +12,15 @@ const AskBidView = ({ market }: { market: Market }) => {
   return (
     <>
       {initialAskOrder && (
-        <OrderCard order={initialAskOrder} baseAsset={market.baseAsset} />
+        <OrderCard
+          order={initialAskOrder}
+          baseAsset={market.baseAsset}
+          market={market}
+        />
       )}
       {/* We need a blank place for people to place the ask orders */}
       <CreateOrderCard side={"Bid"} market={market} />
+      <Toaster />
     </>
   );
 };
