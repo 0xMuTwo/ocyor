@@ -16,4 +16,6 @@ TODO List
 - [ ] QoL Fixes
   - [ ] Fix flashing on IP 1-6
     - [ ] Just add a black BG between it and actual BG. Should fix quickly, then can remove wait limit as well
-    - [ ] Get rid of "x" on Market Dialogs
+    - [ ] Get rid of "x" on Market Dialogs and AskBidPopupCard
+    - [ ] Tom's Market did NOT work, think it had to do with apos?
+    - [ ] Blast Gold is Hard coded
