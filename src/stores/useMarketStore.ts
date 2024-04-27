@@ -1,6 +1,6 @@
-import { Market } from "@/components/types";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
+import { Market } from "@/types/types";
 
 // Define the state structure
 interface MarketState {

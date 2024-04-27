@@ -1,6 +1,5 @@
 "use client";
-
-import { Market } from "../types";
+import { Market } from "@/types/types";
 
 const MarketTopBar = ({ market }: { market: Market | undefined }) => {
   return market ? (

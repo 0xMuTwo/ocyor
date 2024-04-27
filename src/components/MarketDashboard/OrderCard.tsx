@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { AppState, AskOrder, BidOrder, Market } from "../types";
-import { Card } from "../ui/card";
-import { Button } from "../ui/button";
-import AskBidPopupCard from "./AskBidPopupCard";
+import { AppState, AskOrder, BidOrder, Market } from "@/types/types";
 import { useMarketStore } from "@/stores/useMarketStore";
 import { useUserStore } from "@/stores/useUserStore";
 import { useAppStateStore } from "@/stores/useAppStateStore";
+import { Card } from "../ui/card";
+import { Button } from "../ui/button";
+import AskBidPopupCard from "./AskBidPopupCard";
 
 const isAskOrder = (order: any): order is AskOrder => order.orderType === "Ask";
 const isBidOrder = (order: any): order is BidOrder => order.orderType === "Bid";

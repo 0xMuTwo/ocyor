@@ -1,12 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { BgColor } from "@/types/types";
 import { nameToSlug } from "@/lib/utils";
 import { useMarketStore } from "@/stores/useMarketStore";
 import { useAppStateStore } from "@/stores/useAppStateStore";
 import { Button } from "@/components/ui/button";
 import MarketDialogManager from "@/components/ManageMarket/MarketDialogManager";
 import PoolCard from "@/components/PoolCard";
-import { BgColor } from "@/components/types";
 
 const Page = () => {
   const markets = useMarketStore((state) => state.markets);

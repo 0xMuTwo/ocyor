@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
+import { AskOrder, Market } from "@/types/types";
 import { slugToName } from "@/lib/utils";
 import { CreateMarketPopup } from "./CreateMarket";
 import { Button } from "@/components/ui/button";
 import { CreateFirstAsk } from "./CreateFirstAsk";
 import ConfirmMarketCreation from "./ConfirmMarketCreation";
 import { useMarketStore } from "@/stores/useMarketStore";
-import { AskOrder, Market, Order } from "../types";
 
 const MarketDialogManager = () => {
   const { markets, addMarket } = useMarketStore();

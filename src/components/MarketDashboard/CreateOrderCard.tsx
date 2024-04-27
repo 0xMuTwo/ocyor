@@ -1,5 +1,5 @@
 import { toast } from "sonner";
-import { Market } from "../types";
+import { Market } from "@/types/types";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 

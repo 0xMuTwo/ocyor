@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { CardWithContent } from "./CardWithContent";
-import { BgColor, IPState, LP1State } from "./types";
 import { useRouter } from "next/navigation";
+import { BgColor, LP1State } from "@/types/types";
+import { CardWithContent } from "./CardWithContent";
 const cardContent = {
   title: "You are an LP",
   subheading: "",

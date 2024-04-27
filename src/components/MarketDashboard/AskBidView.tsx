@@ -1,8 +1,7 @@
-import { Market } from "../types";
+import { Market } from "@/types/types";
 import OrderCard from "./OrderCard";
 import CreateOrderCard from "./CreateOrderCard";
 import { Toaster } from "../ui/sonner";
-import { useState } from "react";
 
 const AskBidView = ({ market }: { market: Market }) => {
   const initialAskOrder = market.orderbook.find(

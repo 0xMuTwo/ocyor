@@ -1,6 +1,6 @@
 "use client";
 import { useAppStateStore } from "@/stores/useAppStateStore";
-import { AppState } from "./types";
+import { AppState } from "@/types/types";
 
 const Navbar = () => {
   const appState = useAppStateStore((state) => state.appState);

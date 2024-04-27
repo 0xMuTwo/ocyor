@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { CardWithContent } from "./CardWithContent";
-import { BgColor, IPState } from "./types";
 import { useRouter } from "next/navigation";
+import { BgColor, IPState } from "@/types/types";
+import { CardWithContent } from "./CardWithContent";
 const cardContent = {
   title: "You are a builder",
   subheading: "",

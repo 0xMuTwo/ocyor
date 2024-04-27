@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import { AppState } from "@/components/types";
 import { devtools } from "zustand/middleware";
+import { AppState } from "@/types/types";
 
 interface AppStateStore {
   appState: AppState;

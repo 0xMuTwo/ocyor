@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { User } from "@/components/types";
+import { User } from "@/types/types";
 
 interface UserState {
   users: User[];

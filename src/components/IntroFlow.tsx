@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
+import { AppState, BgColor } from "@/types/types";
 import { CardWithContent } from "./CardWithContent";
-import { AppState, BgColor } from "./types";
 const cardContents = [
   {
     title: "Welcome to Royco",

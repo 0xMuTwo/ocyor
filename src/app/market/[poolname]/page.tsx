@@ -1,8 +1,8 @@
 "use client";
-import MarketDashboard from "@/components/MarketDashboard/MarketDashboard";
-import { useMarketStore } from "@/stores/useMarketStore";
-import { Market } from "@/components/types";
+import { Market } from "@/types/types";
 import { slugToName } from "@/lib/utils";
+import { useMarketStore } from "@/stores/useMarketStore";
+import MarketDashboard from "@/components/MarketDashboard/MarketDashboard";
 
 interface PageProps {
   params: { poolname: string };

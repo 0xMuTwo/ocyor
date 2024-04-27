@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AskOrder, BidOrder, Market, Order } from "../types";
+import { Market } from "@/types/types";
 
 import AskBidView from "./AskBidView";
 import { ViewToggle } from "./ViewToggle";
