@@ -10,22 +10,30 @@ const AuthContext = createContext<AuthContextType>({ isAuthenticated: false });
 export function useAuth() {
   return useContext(AuthContext);
 }
+
 interface PasswordProtectProps {
   children: ReactNode;
 }
 
 export const PasswordProtect = ({ children }: PasswordProtectProps) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // Initialize isAuthenticated based on sessionStorage
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return sessionStorage.getItem("isAuthenticated") === "true";
+  });
   const [password, setPassword] = useState("");
 
   const verifyPassword = (event: React.FormEvent) => {
     event.preventDefault();
     if (password === process.env.NEXT_PUBLIC_PASSWORD) {
       setIsAuthenticated(true);
+      sessionStorage.setItem("isAuthenticated", "true");
     } else {
       alert("Incorrect password");
     }
   };
+
+  // No need for an useEffect to read the sessionStorage for initial value,
+  // since we've handled that in the state initializer
 
   if (!isAuthenticated) {
     return (
