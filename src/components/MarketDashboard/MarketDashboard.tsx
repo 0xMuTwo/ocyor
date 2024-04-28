@@ -4,6 +4,7 @@ import { Market } from "@/types/types";
 import AskBidView from "./AskBidView";
 import { ViewToggle } from "./ViewToggle";
 import MarketProgressBar from "./MarketProgressBar";
+import ShowInventory from "./ShowInventory";
 
 export type MarketView = "AskBid" | "PoolTokens";
 
@@ -24,6 +25,10 @@ const MarketDashboard = ({ market }: { market: Market }) => {
     <div className="grid grid-cols-4 grid-rows-8 gap-4 h-[90vh]">
       <div className="col-span-4 row-span-1 bg-red-100">
         <MarketProgressBar amount={amt_filled} total={total_amt_asked} />
+      </div>
+      <div className="col-start-4 col-end-5 row-span-4 row-start-2 bg-emerald-200 ">
+        {/* Show Inventory + Pool Tokens Here */}
+        <ShowInventory />
       </div>
       <div className="col-start-4 col-end-5 row-span-3 row-start-6 ">
         <ViewToggle setMarketView={setMarketView} />

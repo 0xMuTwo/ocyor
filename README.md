@@ -10,6 +10,7 @@ TODO List
 - [x] Create LP Flow 1
   - [x] Wire up Fill and Place buttons.
   - [x] Calculate Amount filled and put in progress bar
+  - [x] List tokens in blank spot
   - [ ] Implement Pool Token Screen
 - [ ] Create LP Flow 2
 - [ ] Create Password Login
@@ -20,4 +21,4 @@ TODO List
     - [ ] Get rid of "x" on Market Dialogs and AskBidPopupCard
     - [ ] Tom's Market did NOT work, think it had to do with apos?
     - [ ] Blast Gold is Hard coded
-    - [ ] List tokens in blank spot
+    - [ ] Add Tool Tips to Bids/Asks and Pool Tokens buttons
