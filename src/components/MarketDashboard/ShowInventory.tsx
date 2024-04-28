@@ -24,6 +24,11 @@ const ShowInventory = () => {
   return (
     <div>
       <div>User: {userDetails?.username}</div>
+
+      <div>
+        {" "}
+        ETH, Dai, USDC: <span className="text-2xl"> &#8734;</span>
+      </div>
       <div>Incentives: {userDetails?.incentives}</div>
       <div>Pool Tokens: {userDetails?.poolTokens}</div>
     </div>
