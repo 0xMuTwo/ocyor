@@ -7,7 +7,7 @@ const cardContent = {
   subheading: "",
   descriptions: [
     "You have just heard about the protocol",
-    "You're want some tokens,",
+    "You want some tokens,",
     "looks like someone else is trying to get rid of some...",
   ],
 };
