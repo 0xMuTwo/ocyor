@@ -12,8 +12,8 @@ TODO List
   - [x] Calculate Amount filled and put in progress bar
   - [x] List tokens in blank spot
   - [x] Implement Pool Token Screen
+- [x] Create Password Login
 - [ ] Create LP Flow 2
-- [ ] Create Password Login
 
 - [ ] QoL Fixes
   - [ ] Get rid of "x" on Market Dialogs and AskBidPopupCard
