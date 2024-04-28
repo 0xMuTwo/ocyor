@@ -19,9 +19,6 @@ TODO List
 
 - [ ] QoL Fixes
   - [ ] Get rid of "x" on Market Dialogs and AskBidPopupCard
-  - [ ] Tom's Market did NOT work, think it had to do with apos?
-  - [ ] Blast Gold is Hard coded
-  - [ ] Fix flashing on IP 1-6
-    - [ ] Just add a black BG between it and actual BG. Should fix quickly, then can remove wait limit as well
   - [ ] Add Tool Tips to Bids/Asks and Pool Tokens buttons
-  - [ ] ETH is hardcoded in some spots
+  - [ ] Tom's Market did NOT work, think it had to do with "'" The apos key?
+  - [ ] Blast Gold is Hard coded
