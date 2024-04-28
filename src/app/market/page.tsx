@@ -30,6 +30,10 @@ const Page = () => {
     router.push("/");
     setAppState("LP1");
   };
+  const handleBecomeLP2 = () => {
+    router.push("/");
+    setAppState("LP2");
+  };
   const handleRouterPush = (name: string) => {
     router.push(`/market/${nameToSlug(name)}`);
     setCurrentPool(name);
@@ -73,6 +77,11 @@ const Page = () => {
           {appState === "IP" || appState === "Intro" ? (
             <div className="flex justify-center pb-8 w-full">
               <Button onClick={handleBecomeLP}>Become LP</Button>
+            </div>
+          ) : null}
+          {appState === "LP1" ? (
+            <div className="flex justify-center pb-8 w-full">
+              <Button onClick={handleBecomeLP2}>Become Secondary LP</Button>
             </div>
           ) : null}
         </>

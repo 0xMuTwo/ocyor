@@ -1,5 +1,5 @@
 import MainApp from "@/components/MainApp";
-import { PasswordProtect } from "@/components/PasswordProtect"; // Ensure this path matches where you’ve created the PasswordProtect component.
+import { PasswordProtect } from "@/components/PasswordProtect";
 
 export default function Home() {
   return (

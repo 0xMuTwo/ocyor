@@ -1,6 +1,5 @@
 export type AppState = "Intro" | "IP" | "LP1" | "LP2";
-export type IPState = "Card" | "Market";
-export type LP1State = "Card" | "Market";
+export type IntroState = "Card" | "Market";
 export type Market = {
   poolName: string;
   creatorAddress: string;

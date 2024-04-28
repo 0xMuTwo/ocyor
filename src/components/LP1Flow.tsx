@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BgColor, LP1State } from "@/types/types";
+import { BgColor, IntroState } from "@/types/types";
 import { CardWithContent } from "./CardWithContent";
 const cardContent = {
   title: "You are an LP",
@@ -12,7 +12,7 @@ const cardContent = {
   ],
 };
 const LP1Flow = () => {
-  const [LP1FlowState, setLP1FlowState] = useState<LP1State>("Card");
+  const [LP1FlowState, setLP1FlowState] = useState<IntroState>("Card");
   const router = useRouter();
   useEffect(() => {
     if (LP1FlowState === "Market") {
