@@ -70,6 +70,7 @@ const Page = () => {
                   key={index}
                   initialAsk={initialAskOrder.baseAmount}
                   onClick={() => handleRouterPush(market.poolName)}
+                  askFilled={market.amountFilled}
                 />
               ) : null;
             })}
