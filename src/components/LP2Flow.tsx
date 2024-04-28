@@ -7,8 +7,8 @@ const cardContent = {
   subheading: "",
   descriptions: [
     "You have just heard about the protocol",
-    "You want some tokens,",
-    "looks like someone else is trying to get rid of some...",
+    "You want some tokens",
+    "Lucky for you, it looks like someone is trying to get rid of some...",
   ],
 };
 const LP2Flow = () => {
