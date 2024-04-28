@@ -5,6 +5,7 @@ import AskBidView from "./AskBidView";
 import { ViewToggle } from "./ViewToggle";
 import MarketProgressBar from "./MarketProgressBar";
 import ShowInventory from "./ShowInventory";
+import PoolTokens from "./PoolTokensView";
 
 export type MarketView = "AskBid" | "PoolTokens";
 
@@ -36,7 +37,7 @@ const MarketDashboard = ({ market }: { market: Market }) => {
       <div className="col-span-3 row-start-2 row-span-7 bg-blue-100">
         <div>
           {marketView === "AskBid" ? <AskBidView market={market} /> : null}
-          {marketView === "PoolTokens" ? <div>Pool Tokens</div> : null}
+          {marketView === "PoolTokens" ? <PoolTokens market={market} /> : null}
         </div>
       </div>
     </div>

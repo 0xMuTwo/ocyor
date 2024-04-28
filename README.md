@@ -11,14 +11,15 @@ TODO List
   - [x] Wire up Fill and Place buttons.
   - [x] Calculate Amount filled and put in progress bar
   - [x] List tokens in blank spot
-  - [ ] Implement Pool Token Screen
+  - [x] Implement Pool Token Screen
 - [ ] Create LP Flow 2
 - [ ] Create Password Login
 
 - [ ] QoL Fixes
+  - [ ] Get rid of "x" on Market Dialogs and AskBidPopupCard
+  - [ ] Tom's Market did NOT work, think it had to do with apos?
+  - [ ] Blast Gold is Hard coded
   - [ ] Fix flashing on IP 1-6
     - [ ] Just add a black BG between it and actual BG. Should fix quickly, then can remove wait limit as well
-    - [ ] Get rid of "x" on Market Dialogs and AskBidPopupCard
-    - [ ] Tom's Market did NOT work, think it had to do with apos?
-    - [ ] Blast Gold is Hard coded
-    - [ ] Add Tool Tips to Bids/Asks and Pool Tokens buttons
+  - [ ] Add Tool Tips to Bids/Asks and Pool Tokens buttons
+  - [ ] ETH is hardcoded in some spots

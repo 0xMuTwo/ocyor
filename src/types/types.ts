@@ -8,8 +8,15 @@ export type Market = {
   actionType: string;
   referralAmount: number;
   isWhitelisted: boolean;
-  orderbook: Order[];
   amountFilled: number;
+  orderbook: Order[];
+  poolTokenOrders?: PoolTokenOrder[];
+};
+
+export type PoolTokenOrder = {
+  poolTokenAmount: number;
+  askingPrice: number;
+  orderCreator: string;
 };
 
 export type AskOrder = {

@@ -8,6 +8,7 @@ interface UserState {
 
 interface UserActions {
   addUser: (newUser: User) => void;
+  //Subtraction can occur via negative negative numbers as input
   addPoolTokens: (username: string, poolTokens: number) => void;
   addIncentives: (username: string, incentives: number) => void;
 }

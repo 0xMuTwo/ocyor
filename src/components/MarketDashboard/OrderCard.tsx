@@ -59,7 +59,7 @@ const OrderCard: React.FC<OrderCardProps> = ({ order, baseAsset, market }) => {
       const username = translateAppState(appState);
       useUserStore.getState().addPoolTokens(username, data.poolTokens);
       useUserStore.getState().addIncentives(username, data.incentivesGained);
-      console.log("Userstore: ", useUserStore.getState());
+      console.log("User Store: ", useUserStore.getState());
       setTransactionData(data);
     } else {
       console.log("Not using data");

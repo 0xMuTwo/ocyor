@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { Market } from "@/types/types";
+import { Market, PoolTokenOrder } from "@/types/types";
 
 // Define the state structure
 interface MarketState {
@@ -13,6 +13,7 @@ interface MarketActions {
   setMarkets: (markets: Market[]) => void;
   setCurrentMarketPoolName: (poolName: string) => void;
   updateMarketAmountFilled: (poolName: string, amount: number) => void;
+  addPoolTokenOrder: (poolName: string, newOrder: PoolTokenOrder) => Market;
 }
 
 interface MarketSelectors {
@@ -43,6 +44,19 @@ export const useMarketStore = create<MarketStore>(
           markets: state.markets.map((market) => {
             if (market.poolName === poolName) {
               return { ...market, amountFilled: market.amountFilled + amount };
+            }
+            return market;
+          }),
+        })),
+
+      addPoolTokenOrder: (poolName: string, newOrder: PoolTokenOrder) =>
+        set((state: MarketState) => ({
+          markets: state.markets.map((market) => {
+            if (market.poolName === poolName) {
+              const updatedPoolTokenOrders = market.poolTokenOrders
+                ? [...market.poolTokenOrders, newOrder]
+                : [newOrder];
+              return { ...market, poolTokenOrders: updatedPoolTokenOrders };
             }
             return market;
           }),
