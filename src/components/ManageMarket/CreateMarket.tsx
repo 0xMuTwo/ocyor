@@ -73,8 +73,12 @@ export function CreateMarketPopup({
               </SelectTrigger>
               <SelectContent position="popper">
                 <SelectItem value="ETH">ETH</SelectItem>
-                <SelectItem value="USDC">USDC</SelectItem>
-                <SelectItem value="DAI">DAI</SelectItem>
+                <SelectItem disabled value="USDC">
+                  USDC
+                </SelectItem>
+                <SelectItem disabled value="DAI">
+                  DAI
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
