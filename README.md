@@ -14,11 +14,11 @@ TODO List
   - [x] Implement Pool Token Screen
 - [x] Create Password Login
 - [x] Create LP Flow 2
+- [x] Get rid of "x" on Market Dialogs and AskBidPopupCard
 
 - [ ] Buy Tokens -> Place bid
 
 - [ ] QoL Fixes
-  - [ ] Get rid of "x" on Market Dialogs and AskBidPopupCard
   - [ ] Add Tool Tips to Bids/Asks and Pool Tokens buttons
   - [ ] Tom's Market did NOT work, think it had to do with "'" The apos key?
   - [ ] Blast Gold is Hard coded
