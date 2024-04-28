@@ -29,15 +29,26 @@ export const PasswordProtect = ({ children }: PasswordProtectProps) => {
 
   if (!isAuthenticated) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <form onSubmit={verifyPassword}>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.currentTarget.value)}
-            placeholder="Enter password"
-          />
-          <button type="submit">Submit</button>
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <form
+          onSubmit={verifyPassword}
+          className="p-10 bg-white rounded-lg shadow-lg min-w-[300px]"
+        >
+          <div className="mb-6 text-center">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.currentTarget.value)}
+              placeholder="Enter password"
+              className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-emerald-500 transition-colors text-center"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full p-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-800 transition-colors"
+          >
+            Submit
+          </button>
         </form>
       </div>
     );
