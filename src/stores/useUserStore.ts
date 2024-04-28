@@ -20,9 +20,9 @@ export const useUserStore = create<UserStore>(
     (set) => ({
       // Initial state setup with pre-populated users
       users: [
-        { username: "Builder", poolTokens: 100, incentives: 10 },
-        { username: "LP1", poolTokens: 200, incentives: 20 },
-        { username: "LP2", poolTokens: 300, incentives: 30 },
+        { username: "Builder", poolTokens: 0, incentives: 0 },
+        { username: "LP1", poolTokens: 0, incentives: 0 },
+        { username: "LP2", poolTokens: 0, incentives: 0 },
       ],
 
       addUser: (newUser: User) =>
