@@ -18,6 +18,8 @@ export type PoolTokenOrder = {
   orderCreator: string;
 };
 
+export type Order = AskOrder | BidOrder;
+
 export type AskOrder = {
   orderType: "Ask";
   creatorAddress: string;
@@ -34,8 +36,6 @@ export type BidOrder = {
   incentive: string;
   incentiveAmount: number;
 };
-
-export type Order = AskOrder | BidOrder;
 
 export enum BgColor {
   IP = "bg-indigo-300",
